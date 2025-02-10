@@ -8,6 +8,8 @@ This is a TypeScript-based MCP server that implements a simple notes system. It 
 - Tools for creating new notes
 - Prompts for generating summaries of notes
 
+<a href="https://glama.ai/mcp/servers/yuseiq2ka3"><img width="380" height="200" src="https://glama.ai/mcp/servers/yuseiq2ka3/badge" alt="drupal-modules-mcp Server MCP server" /></a>
+
 ## Features
 
 ### Resources
