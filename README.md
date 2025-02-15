@@ -1,29 +1,23 @@
 # drupal-modules-mcp MCP Server
 
-A Model Context Protocol server
+A Model Context Protocol server for retrieving Drupal module information from drupal.org.
 
-This is a TypeScript-based MCP server that implements a simple notes system. It demonstrates core MCP concepts by providing:
-
-- Resources representing text notes with URIs and metadata
-- Tools for creating new notes
-- Prompts for generating summaries of notes
+This TypeScript-based MCP server provides tools to fetch detailed information about Drupal modules directly from drupal.org. It helps AI assistants and other tools to get accurate, up-to-date information about Drupal modules including version compatibility, installation instructions, and documentation.
 
 ## Features
 
-### Resources
-- List and access notes via `note://` URIs
-- Each note has a title, content and metadata
-- Plain text mime type for simple content access
-
 ### Tools
-- `create_note` - Create new text notes
-  - Takes title and content as required parameters
-  - Stores note in server state
-
-### Prompts
-- `summarize_notes` - Generate a summary of all stored notes
-  - Includes all note contents as embedded resources
-  - Returns structured prompt for LLM summarization
+- `get_module_info` - Fetch comprehensive information about a Drupal module
+  - Requires the module's machine name as parameter
+  - Returns detailed module information including:
+    - Name and description
+    - Latest recommended version
+    - Download statistics
+    - Module status
+    - Composer installation command
+    - Drupal version compatibility
+    - Project URL
+    - Module documentation/README
 
 ## Development
 
@@ -44,7 +38,9 @@ npm run watch
 
 ## Installation
 
-To use with Claude Desktop, add the server config:
+### Claude Desktop
+
+Add the server config to your Claude Desktop configuration:
 
 On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
 On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
@@ -58,6 +54,23 @@ On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
   }
 }
 ```
+
+### Cline, Roo-Cline, and Windsurf
+
+Add the server configuration to your IDE's settings:
+
+1. Open the IDE settings
+2. Navigate to the MCP Servers section
+3. Add a new server with the following configuration:
+   ```json
+   {
+     "drupal-modules-mcp": {
+       "command": "/path/to/drupal-modules-mcp/build/index.js"
+     }
+   }
+   ```
+
+Make sure to replace `/path/to/drupal-modules-mcp` with the actual path where you installed the server.
 
 ### Debugging
 
