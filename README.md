@@ -4,6 +4,8 @@ A Model Context Protocol server for retrieving Drupal module information from dr
 
 This TypeScript-based MCP server provides tools to fetch detailed information about Drupal modules directly from drupal.org. It helps AI assistants and other tools to get accurate, up-to-date information about Drupal modules including version compatibility, installation instructions, and documentation.
 
+<a href="https://glama.ai/mcp/servers/yuseiq2ka3"><img width="380" height="200" src="https://glama.ai/mcp/servers/yuseiq2ka3/badge" alt="drupal-modules-mcp Server MCP server" /></a>
+
 ## Features
 
 ### Tools
